@@ -7,7 +7,7 @@ Page({
     userInfo:{},
     hasUserInfo:false,
     token:'',
-    userName:'夺宝答题王',
+    userName:'你好啊！这是一个测试页面',
     display:"../../images/display.png",
     Tel:'020-22096568',
     date: ''
