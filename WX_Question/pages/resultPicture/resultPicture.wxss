@@ -1,0 +1,31 @@
+.container-main {width:100%;}
+.am-title {background-color:#96c9ca; height:70rpx;line-height:70rpx; text-align: center; color:#ffffff;
+font-family: PingFangSC-Light,helvetica,'Heiti SC';font-size:.9rem;}
+
+.point-img {
+  width:100%;height:100%;
+  }
+.bjt {width:100%; height:85%; position: absolute; z-index:  -1;}
+.am-title2 {font-size:1.6rem;padding-top:20px;padding-bottom:20px;font-weight:bold; text-align: center;color:#ffffff;}
+.seal {width:284px;height:80px;position: absolute;left:5%;}
+
+.point-container {top:20vh;text-align: left;font-size:1.0rem;border-radius: 10rpx; position: absolute;
+margin:10px;padding:10px;margin-top:0px;color:#5e7436;}
+.am-img {text-align: center;left:35vw;}
+.am-img image {width:200rpx;height:200rpx;}
+.point-container text {font-weight:bold;}
+.point-container .am-cname {padding-top:15rpx; padding-left:20rpx;padding-right:20rpx;}
+.point-container .am-yuyan {padding-top:15rpx; padding-left:20rpx;padding-right:20rpx;}
+.point-container .am-renwu {padding-top:15rpx;padding-left:20rpx;padding-right:20rpx;}
+.point-container .am-fan   {padding-top:15rpx;padding-left:20rpx;padding-right:20rpx;}
+.point-container .am-xg    {padding-top:15rpx;padding-left:20rpx;padding-right:20rpx;}
+
+.content {margin:15rpx auto; text-align: left;}
+.am-div {height:20rpx;}
+.am-footer {display:flex;height: 100rpx;width: 100%; text-align: center;position: absolute;bottom:-5px;left:0;}
+.am-footer button {border:#ff6a38 1px solid; border-radius:20rpx; width:300rpx;
+    height: 70rpx;
+    text-align: center;
+    line-height:70rpx;
+    font-size: 30rpx;background-color:#ffffff; letter-spacing:2px;
+    color: #E97855;}

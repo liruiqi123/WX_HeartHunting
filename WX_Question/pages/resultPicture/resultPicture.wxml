@@ -1,0 +1,25 @@
+  <canvas canvas-id='share' style='width:375px;height:580px'  hidden='{{canvasHidden}}'></canvas>
+<view class='container-main'>
+  <view class='am-title'>点击图片预览后，长按或点击右上角保存分享</view>
+
+  <view class='point-img'>
+  <image src='../../images/bj.png' class='bjt'></image>
+      <view class="point-container">
+        <view class="am-img"><image src='{{imgurl}}'></image></view>
+        <!-- <view class='am-cname'>姓名：<text>{{cname}}</text></view>
+        <view class='am-yuyan'>近期预言：<text>{{yuyan}}</text></view>
+        <view class='am-renwu'>人物匹配：<text>{{renwu}}</text></view>
+        <view class='am-fan'>前世烦恼：<text>{{fan}}</text></view> -->
+        <view class='am-xg'>你的管理能力：<text>{{xg}}</text></view>
+        <view class="content"><image src='../../images/11.png' class='seal'></image>
+        </view>
+      </view>
+       <view class='am-div'></view>
+  </view>
+</view>
+
+ <view class='am-footer'>
+      <button open-type="share" data-tag="share1" id="btn_share1">转发</button>
+      <button bindtap='saveImageToPhotosAlbum'>保存图片</button>
+
+  </view>
