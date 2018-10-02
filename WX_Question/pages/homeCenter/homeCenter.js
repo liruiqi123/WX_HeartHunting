@@ -1,73 +1,44 @@
-//home.js
-//获取应用实例
-var app = getApp();
-var timehome = null
+var imgUrls = [
+  { id: 1,image: "https://www.niftydose.cn/User/image/d942b0f1bccc4e6c6081bd5f3398fd4e.jpg" },
+  { id: 2,image: "https://www.niftydose.cn/User/image/29af4184e336f82a38ecd3de07a01569.jpg" },
+  { id: 3,image: "https://www.niftydose.cn/User/image/eacea6d98f57fdcda835003fd8734c14.jpg" },
+  { id: 4,image: "https://www.niftydose.cn/User/image/9416f7ac87e99efd8a179dedec15d0c0.jpg" }
+]
+
+
 Page({
   data: {
-    userInfo:{},
-    hasUserInfo:false,
-    token:'',
-    userName:'你好啊！这是一个测试页面',
-    display:"../../images/display.png",
-    Tel:'020-22096568',
-    date: ''
+    imgUrls: imgUrls,
+    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    circular: true,
+    interval: 2000,
+    duration: 500,
+    previousMargin: 0,
+    nextMargin: 0,
+    current: 0,
+    contentItems: ['', '', '', ''],
   },
+  imageLoad: function () {
+    console.log("已经开始加载图片");
+    //bindload 图片加载的时候自动设定宽度  
+    this.setData({
+      imageWidth: wx.getSystemInfoSync().windowWidth
+    })
+  }, 
   
-  //电话
-  bindViewTel: function () {
-    wx.makePhoneCall({
-      phoneNumber: this.data.Tel,
-    })
-  },
-  //右上角添加转发按钮
-  onShareAppMessage: function (res) {
-    return {
-      success: function (res) {
-        // 转发成功
-      },
-      fail: function (res) {
-        // 转发失败
-      }
-    }
-  },
-  onReady: function () {
-    var that = this;
-    timehome = setTimeout(function () {
-      that.loop();
-    }, 1500)
-    var aa = 1524150357000;
-    var tims = new Date().getTime();
-    if (tims > aa) {
-      wx.reLaunch({
-        url: '../index/index'
-      })
-      if (timehome) { clearTimeout(timehome); }
-      return false
-    }
-    wx.showLoading({
-      title: '加载中•••',
-      mask: true
-    })
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          versionnum: res.SDKVersion,
-        })
-      }
-    })
-  },
-  
-  loop: function () {
-    var info = app.globalData.userInfo;
-      // tok = app.globalData.token;
-      wx.setNavigationBarTitle({
-        title: this.data.userName
-      })
-      this.setData({
-        userInfo: info,
-        hasUserInfo: true
-      })
-      wx.hideLoading()
+  swiperChange: function (event) {
     
+    this.setData({
+      current: event.detail.current
+    })
+ 
+  },
+  swipclick: function () {//点击图片触发事件
+    console.log(this.data.imgUrls[this.data.current]);
   }
+
+ 
 })

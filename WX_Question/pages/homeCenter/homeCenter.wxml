@@ -1,5 +1,84 @@
-<!--home.wxml-->
-<view class="container" wx:if="{{hasUserInfo}}"> 
-  <image src='{{display}}'></image>
-  <view class='phone' bindtap='bindViewTel'></view>
+<view class="container">
+
+
+<!-- 滑动页面选择区 -->
+
+  
+    <view class="page-section">
+      <swiper 
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px"  bindchange="swiperChange"  style="width: {{imageWidth}}px;height: 150rpx " >
+       <block wx:for="{{imgUrls}}" wx:key="image">
+          <swiper-item>
+            <image src="{{item.image}}"  model="aspectFit" style="width: {{imageWidth}}px;height: 100% " bindload="imageLoad"  bindtap="swipclick"   />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  
+
+<!-- 换行区 -->
+<!-- <view class='clear-top'></view> -->
+<!-- 换行区 -->
+
+
+<!-- 个人中心区 -->
+<view class='userCenter' >
+ <view class="userinfo">
+   <image class='item_bg' src='/images/db/rank/user.png' mode='widthFix'></image>
+   <view class='ls-item ls-item-user clearfix'>       
+      <view class='ls-c'>
+        <view class='ls-c-img'>
+          <image src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKeBn4LFgzpXE8S5RemZbRrKBJZ3RR9keBibaDElsFzC7M0Q8oJ50tzySewGWe8mywAq6gbjs8HW1Q/132"></image>
+        </view>
+      </view>
+    </view> 
+  </view>
 </view>
+<!-- 个人中心区 -->
+
+
+<!-- 换行区 -->
+
+<!-- 换行区 -->
+
+
+<!-- 好友列表区 -->
+<view class='userCenter' >
+ <view class="userinfo">
+   <image class='item_bg' src='/images/db/rank/user.png' mode='widthFix'></image>
+   <view class='ls-item ls-item-user clearfix'>       
+      <view class='ls-c'>
+        <view class='ls-c-img'>
+          <image src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKeBn4LFgzpXE8S5RemZbRrKBJZ3RR9keBibaDElsFzC7M0Q8oJ50tzySewGWe8mywAq6gbjs8HW1Q/132"></image>
+        </view>
+      </view>
+    </view> 
+  </view>
+</view>
+<!-- 好友列表区 -->
+
+
+<!-- 功能模块区 -->
+ <view class="selection">
+    <view class="header">
+      <text class="text_left">精品推荐</text>  <text class="text_right">全部商品</text>
+    </view>
+
+    <view class="content">
+      <view class="content_item" wx:for="{{contentItems}}" bindtap="handleTapImage" id="这地方可以传参" >
+             <image src="../../images/img3.png" />
+             <view class="content_item_text"><text>图片标题,小毛请点</text></view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+</view>
+
+
